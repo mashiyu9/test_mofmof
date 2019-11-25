@@ -19,12 +19,13 @@ class PropetiesController < ApplicationController
     @nearest_stations = @propety.nearest_stations
     @nearest_stations.each do |ns|
 
-    # if @nearest_stations.last.route_name.present? &&
-    #    @nearest_stations.last.station.present? &&
-    #    @nearest_stations.last.walking_time.present?
-    #   @propety.nearest_stations.build
-    # end
+    if @nearest_stations.last.route_name.present? &&
+       @nearest_stations.last.station.present? &&
+       @nearest_stations.last.walking_time.present?
+      @propety.nearest_stations.build
+    end
 
+    end
   end
 
   def create
