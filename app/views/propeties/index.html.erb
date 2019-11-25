@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Propeties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rent</th>
+      <th>Address</th>
+      <th>Age</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @propeties.each do |propety| %>
+      <tr>
+        <td><%= propety.name %></td>
+        <td><%= propety.rent %></td>
+        <td><%= propety.address %></td>
+        <td><%= propety.age %></td>
+        <td><%= propety.remarks %></td>
+        <td><%= link_to 'Show', propety %></td>
+        <td><%= link_to 'Edit', edit_propety_path(propety) %></td>
+        <td><%= link_to 'Destroy', propety, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Propety', new_propety_path %>
