@@ -6,10 +6,12 @@ class PropetiesController < ApplicationController
   end
 
   def show
+    @n = 1
   end
 
   def new
     @propety = Propety.new
+    @n = 1
     2.times do 
       @propety.nearest_stations.build
     end

@@ -27,6 +27,7 @@
 
 <% @propety.nearest_stations.each do |propety| %>
 <hr>
+<p>最寄り駅<%= @n %></p>
 <div class="propety">
   <p>
     <strong>路線名:</strong>
@@ -41,6 +42,7 @@
     <%= propety.walking_time %>
   </p>
   </div>
+  <% @n += 1 %>
   <% end %>
 
 
