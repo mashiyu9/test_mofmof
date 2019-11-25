@@ -18,6 +18,7 @@ class PropetiesController < ApplicationController
   end
 
   def edit
+    @n = 1
     @nearest_stations = @propety.nearest_stations
     @nearest_stations.each do |ns|
 
