@@ -10,9 +10,17 @@ class PropetiesController < ApplicationController
 
   def new
     @propety = Propety.new
+    2.times { @propety.nearest_stations.build }
   end
 
   def edit
+    @nearest_stations = @propety.nearest_stations
+    (@nearest_stations.count + 1).times {
+      @nearest_stations.build
+    }
+    unless @propety.nearest_stations.present?
+      @propety.nearest_stations.build
+    end
   end
 
   def create
@@ -44,6 +52,13 @@ class PropetiesController < ApplicationController
     end
 
     def propety_params
-      params.require(:propety).permit(:name, :rent, :address, :age, :remarks)
+      params.require(:propety).permit(
+        :name,
+        :rent,
+        :address,
+        :age,
+        :remarks,
+        nearest_stations_attributes: [:id, :route_name, :station, :walking_time]
+      )
     end
 end

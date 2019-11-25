@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>物件名:</strong>
   <%= @propety.name %>
 </p>
 
 <p>
-  <strong>Rent:</strong>
+  <strong>賃料:</strong>
   <%= @propety.rent %>
 </p>
 
@@ -24,6 +24,25 @@
   <strong>Remarks:</strong>
   <%= @propety.remarks %>
 </p>
+
+<% @propety.nearest_stations.each do |propety| %>
+<div class="propety">
+  <p>
+    <strong>route_name:</strong>
+    <%= propety.route_name %>
+  </p>
+  <p>
+    <strong>station:</strong>
+    <%= propety.station %>
+  </p>
+  <p>
+    <strong>walking_time:</strong>
+    <%= propety.walking_time %>
+  </p>
+  </div>
+  <% end %>
+
+
 
 <%= link_to 'Edit', edit_propety_path(@propety) %> |
 <%= link_to 'Back', propeties_path %>

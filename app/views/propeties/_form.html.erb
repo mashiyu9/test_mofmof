@@ -36,7 +36,19 @@
     <%= f.text_area :remarks %>
   </div>
 
+  <%= f.label :nearest_stations, :最寄駅情報 %><br />
+  <%= f.fields_for :nearest_stations do |nearest_stations| %>
+      <%= nearest_stations.label :route_name, :郵便番号 %>
+      <%= nearest_stations.text_field :route_name %><br />
+      <%= nearest_stations.label :station, :都道府県 %>
+      <%= nearest_stations.text_field :station %><br />
+      <%= nearest_stations.label :walking_time, :市町村番 %>
+      <%= nearest_stations.text_field :walking_time %><br />
+      <%= nearest_stations.label :_destroy, :削除 %>
+      <%= nearest_stations.check_box :_destroy %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
