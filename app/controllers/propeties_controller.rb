@@ -17,11 +17,13 @@ class PropetiesController < ApplicationController
 
   def edit
     @nearest_stations = @propety.nearest_stations
-    if @nearest_stations.last.route_name.present? &&
-       @nearest_stations.last.station.present? &&
-       @nearest_stations.last.walking_time.present?
-      @propety.nearest_stations.build
-    end
+    @nearest_stations.each do |ns|
+
+    # if @nearest_stations.last.route_name.present? &&
+    #    @nearest_stations.last.station.present? &&
+    #    @nearest_stations.last.walking_time.present?
+    #   @propety.nearest_stations.build
+    # end
 
   end
 

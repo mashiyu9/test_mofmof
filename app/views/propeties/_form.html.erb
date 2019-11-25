@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :賃貸料 %>
-    <%= f.number_field :rent %>
+    <%= f.number_field :rent %>円j
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :築年数 %>
-    <%= f.number_field :age %>
+    <%= f.number_field :age %>年
   </div>
 
   <div class="field">
@@ -37,18 +37,21 @@
   </div>
 
   <%= f.label :nearest_stations, :最寄駅情報 %><br />
+  <% n = 1 %>
   <%= f.fields_for :nearest_stations do |ns| %>
-      <%= ns.label :route_name, :郵便番号 %>
+    <p>最寄り駅<%= puts n %></p>
+      <%= ns.label :route_name, :路線名%>
       <%= ns.text_field :route_name %><br />
-      <%= ns.label :station, :都道府県 %>
+      <%= ns.label :station, :駅名%>
       <%= ns.text_field :station %><br />
-      <%= ns.label :walking_time, :市町村番 %>
-      <%= ns.text_field :walking_time %><br />
+      <%= ns.label :walking_time, :徒歩分数%>
+      <%= ns.text_field :walking_time %>分<br />
       <%= ns.label :_destroy, :削除 %>
       <%= ns.check_box :_destroy %>
+      <% n += 1 %>
   <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :登録 %>
   </div>
 <% end %>
 
