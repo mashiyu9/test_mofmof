@@ -60,7 +60,7 @@ class PropetiesController < ApplicationController
         :address,
         :age,
         :remarks,
-        nearest_stations_attributes: [:id, :route_name, :station, :walking_time]
+        nearest_stations_attributes: [:id, :route_name, :station, :walking_time, :_destroy]
       )
     end
 

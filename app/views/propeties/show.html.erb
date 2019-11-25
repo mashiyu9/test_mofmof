@@ -11,32 +11,32 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>住所:</strong>
   <%= @propety.address %>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong>築年数:</strong>
   <%= @propety.age %>
 </p>
 
 <p>
-  <strong>Remarks:</strong>
+  <strong>備考:</strong>
   <%= @propety.remarks %>
 </p>
 
 <% @propety.nearest_stations.each do |propety| %>
 <div class="propety">
   <p>
-    <strong>route_name:</strong>
+    <strong>路線名:</strong>
     <%= propety.route_name %>
   </p>
   <p>
-    <strong>station:</strong>
+    <strong>駅名:</strong>
     <%= propety.station %>
   </p>
   <p>
-    <strong>walking_time:</strong>
+    <strong>徒歩分数:</strong>
     <%= propety.walking_time %>
   </p>
   </div>
@@ -44,5 +44,5 @@
 
 
 
-<%= link_to 'Edit', edit_propety_path(@propety) %> |
-<%= link_to 'Back', propeties_path %>
+<%= link_to '編集', edit_propety_path(@propety) %> |
+<%= link_to '戻る', propeties_path %>
