@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191125015912) do
+ActiveRecord::Schema.define(version: 20191125075602) do
 
   create_table "nearest_stations", force: :cascade do |t|
-    t.text    "route_name",   null: false
-    t.string  "station",      null: false
-    t.integer "walking_time", null: false
+    t.string  "route_name"
+    t.string  "station"
+    t.string  "walking_time"
     t.integer "propety_id"
     t.index ["propety_id"], name: "index_nearest_stations_on_propety_id"
   end

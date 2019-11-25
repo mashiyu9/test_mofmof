@@ -10,17 +10,19 @@ class PropetiesController < ApplicationController
 
   def new
     @propety = Propety.new
-    2.times { @propety.nearest_stations.build }
+    2.times do 
+      @propety.nearest_stations.build
+    end
   end
 
   def edit
     @nearest_stations = @propety.nearest_stations
-    (@nearest_stations.count + 1).times {
-      @nearest_stations.build
-    }
-    unless @propety.nearest_stations.present?
+    if @nearest_stations.last.route_name.present? &&
+       @nearest_stations.last.station.present? &&
+       @nearest_stations.last.walking_time.present?
       @propety.nearest_stations.build
     end
+
   end
 
   def create
@@ -61,4 +63,5 @@ class PropetiesController < ApplicationController
         nearest_stations_attributes: [:id, :route_name, :station, :walking_time]
       )
     end
+
 end
